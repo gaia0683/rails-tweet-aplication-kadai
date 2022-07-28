@@ -1,5 +1,7 @@
 <h1>ポスト一覧</h1>
 
+<p><%= notice %>
+
 <table>
   <tr>
     <th>内容</th>
@@ -9,11 +11,12 @@
   <tr>
     <td><%= post.content%></td>
     
-    <td><%= link_to "ブログを編集する", edit_post_path(post.id) %></td>
+    <td><%= link_to "ポストを編集する", edit_post_path(post.id), data: { confirm: "本当に編集していいですか？" }, class: "btn btn-info" %></td>
+    <td><%= link_to "ポストを削除する", post_path(post.id), method: :delete, data: { confirm: "本当に削除していいですか？" }, class: "btn btn-info" %></td>
   </tr>
 <% end %>
 </table>
 
 <br>
 
-<%=link_to "新しいポストを投稿する", new_post_path %>
+<%=link_to "新しいポストを投稿する", new_post_path, class: "btn btn-dark" %>
