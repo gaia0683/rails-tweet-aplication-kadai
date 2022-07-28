@@ -39,6 +39,6 @@ class PostsController < ApplicationController
     end
 
     def set_blog
-      @psot = Post.find(params[:id])
+      @post = Post.find(params[:id])
     end  
 end
